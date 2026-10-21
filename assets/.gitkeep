@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="760" viewBox="0 0 1400 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1400" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#06111D"/>
+      <stop offset="1" stop-color="#0D2036"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#152D46"/>
+      <stop offset="1" stop-color="#0D1A2B"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3EE7C0"/>
+      <stop offset="1" stop-color="#68A4FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="760" rx="22" fill="url(#bg2)"/>
+
+  <g opacity="0.2">
+    <circle cx="230" cy="170" r="120" fill="#2FDAB5"/>
+    <circle cx="1200" cy="180" r="150" fill="#5CA3FF"/>
+    <circle cx="1100" cy="620" r="130" fill="#7AF7D1"/>
+  </g>
+
+  <g>
+    <rect x="120" y="120" width="1160" height="520" rx="24" fill="url(#panel)" stroke="#224A6D" stroke-width="2"/>
+
+    <rect x="180" y="180" width="250" height="180" rx="18" fill="#0C1A2A" stroke="#4FE6C4" stroke-width="2"/>
+    <rect x="575" y="180" width="250" height="180" rx="18" fill="#0C1A2A" stroke="#67A1FF" stroke-width="2"/>
+    <rect x="970" y="180" width="250" height="180" rx="18" fill="#0C1A2A" stroke="#7AF7D1" stroke-width="2"/>
+
+    <rect x="180" y="410" width="1040" height="160" rx="18" fill="#0C1A2A" stroke="#385F7E" stroke-width="2"/>
+
+    <path d="M430 270H575" stroke="url(#line)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M825 270H970" stroke="url(#line)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M360 360V410" stroke="url(#line)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M700 360V410" stroke="url(#line)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M1040 360V410" stroke="url(#line)" stroke-width="7" stroke-linecap="round"/>
+
+    <circle cx="360" cy="270" r="36" fill="#30D7AD"/>
+    <circle cx="700" cy="270" r="36" fill="#5AA9FF"/>
+    <circle cx="1040" cy="270" r="36" fill="#76F5D8"/>
+
+    <g fill="#DFF5FF" font-family="Segoe UI, Arial, sans-serif">
+      <text x="214" y="245" font-size="26" font-weight="700">Telemetry</text>
+      <text x="214" y="284" font-size="22" opacity="0.8">Sources</text>
+      <text x="608" y="245" font-size="26" font-weight="700">Analytics</text>
+      <text x="607" y="284" font-size="22" opacity="0.8">Detection</text>
+      <text x="1010" y="245" font-size="26" font-weight="700">Research</text>
+      <text x="1007" y="284" font-size="22" opacity="0.8">Validation</text>
+    </g>
+
+    <g fill="#DFF5FF" font-family="Segoe UI, Arial, sans-serif">
+      <text x="232" y="477" font-size="26" font-weight="700">SOC Research Lab pipeline</text>
+      <text x="232" y="518" font-size="22" opacity="0.8">Normalize → Summarize → Detect anomalies → Document findings</text>
+    </g>
+
+    <g fill="#A6CEDB" font-family="Segoe UI, Arial, sans-serif" font-size="18">
+      <text x="220" y="555">Host risk</text>
+      <text x="420" y="555">User activity</text>
+      <text x="610" y="555">Process severity</text>
+      <text x="850" y="555">Threat hypotheses</text>
+      <text x="1105" y="555">Evidence</text>
+    </g>
+  </g>
+</svg>
