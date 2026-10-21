@@ -1,92 +1,69 @@
-# SOC Research Lab
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="420" viewBox="0 0 1400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#07111F"/>
+      <stop offset="0.5" stop-color="#0B1C2C"/>
+      <stop offset="1" stop-color="#10283F"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="216" y1="70" x2="900" y2="350" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3FE7C0"/>
+      <stop offset="1" stop-color="#5AA9FF"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3FE7C0"/>
+      <stop offset="1" stop-color="#79A7FF"/>
+    </linearGradient>
+  </defs>
 
-<img src="assets/soc-research-lab-banner.svg" alt="SOC Research Lab banner" width="1200" />
+  <rect width="1400" height="420" rx="24" fill="url(#bg)"/>
 
-A research-grade SOC telemetry analysis and anomaly detection project for security operations teams, red-team emulation, and evidence-driven detection engineering.
+  <g opacity="0.18">
+    <circle cx="245" cy="140" r="120" fill="#2ED4B6"/>
+    <circle cx="1170" cy="290" r="150" fill="#5AA9FF"/>
+    <circle cx="920" cy="120" r="90" fill="#7AF7D1"/>
+  </g>
 
-## What this project does
+  <g>
+    <path d="M180 110L440 110C475 110 502 136 502 171V240C502 275 475 302 440 302H180C145 302 118 275 118 240V171C118 136 145 110 180 110Z" fill="#0F2237" stroke="#4FE3C1" stroke-width="2"/>
+    <path d="M560 110H830C865 110 892 136 892 171V240C892 275 865 302 830 302H560C525 302 498 275 498 240V171C498 136 525 110 560 110Z" fill="#0F2237" stroke="#63A8FF" stroke-width="2"/>
+    <path d="M940 110H1210C1245 110 1272 136 1272 171V240C1272 275 1245 302 1210 302H940C905 302 878 275 878 240V171C878 136 905 110 940 110Z" fill="#0F2237" stroke="#7AF7D1" stroke-width="2"/>
 
-This repository is designed to help researchers and analysts study security telemetry in a structured, reproducible way. It focuses on:
+    <circle cx="170" cy="170" r="18" fill="#39D0AF"/>
+    <circle cx="170" cy="240" r="18" fill="#39D0AF"/>
+    <circle cx="170" cy="205" r="18" fill="#39D0AF"/>
 
-- endpoint and network telemetry analysis
-- anomaly detection for suspicious host behavior
-- behavior summarization by host, user, and process
-- clear research records for experiments and SOC workflows
-- explainable detection logic that can be extended over time
+    <circle cx="594" cy="170" r="18" fill="#5AA9FF"/>
+    <circle cx="594" cy="240" r="18" fill="#5AA9FF"/>
+    <circle cx="594" cy="205" r="18" fill="#5AA9FF"/>
 
-## Why it matters
+    <circle cx="975" cy="170" r="18" fill="#76F4D7"/>
+    <circle cx="975" cy="240" r="18" fill="#76F4D7"/>
+    <circle cx="975" cy="205" r="18" fill="#76F4D7"/>
 
-Modern SOCs generate high-volume, noisy telemetry. Without structure, it is difficult to separate routine activity from meaningful signals. This project creates a lab environment that makes the following easier:
+    <path d="M505 205H515C530 205 542 217 542 232V232H560" stroke="url(#lineGrad)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M892 205H904C919 205 931 217 931 232V232H940" stroke="url(#lineGrad)" stroke-width="6" stroke-linecap="round"/>
 
-- baseline comparison
-- suspicious activity ranking
-- dataset validation
-- methodology documentation
-- repeatable experiments
+    <g opacity="0.9">
+      <rect x="210" y="150" width="230" height="18" rx="9" fill="#173857"/>
+      <rect x="210" y="182" width="170" height="14" rx="7" fill="#173857"/>
+      <rect x="210" y="214" width="206" height="14" rx="7" fill="#173857"/>
+      <rect x="210" y="246" width="188" height="14" rx="7" fill="#173857"/>
 
-## Visual overview
+      <rect x="590" y="150" width="230" height="18" rx="9" fill="#173857"/>
+      <rect x="590" y="182" width="185" height="14" rx="7" fill="#173857"/>
+      <rect x="590" y="214" width="214" height="14" rx="7" fill="#173857"/>
+      <rect x="590" y="246" width="170" height="14" rx="7" fill="#173857"/>
 
-<img src="assets/architecture-diagram.svg" alt="SOC Research Lab architecture diagram" width="1100" />
+      <rect x="1000" y="150" width="200" height="18" rx="9" fill="#173857"/>
+      <rect x="1000" y="182" width="150" height="14" rx="7" fill="#173857"/>
+      <rect x="1000" y="214" width="180" height="14" rx="7" fill="#173857"/>
+      <rect x="1000" y="246" width="165" height="14" rx="7" fill="#173857"/>
+    </g>
+  </g>
 
-## Project layout
-
-- `data/` — sample telemetry and dataset notes
-- `docs/` — architecture and methodology guidance
-- `research/` — experiment write-ups and findings
-- `notebooks/` — exploratory analysis and model iteration
-- `scripts/` — runnable examples and operational demos
-- `src/soc_research_lab/` — reusable analysis code
-- `tests/` — validation and regression checks
-- `assets/` — project visuals and diagram assets
-
-## Quick start
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-python scripts/run_demo.py
-python -m unittest discover -s tests -v
-```
-
-## Command line usage
-
-```bash
-python -m soc_research_lab.cli --csv data/synthetic_endpoint_telemetry.csv --summary
-python -m soc_research_lab.cli --csv data/synthetic_endpoint_telemetry.csv --anomalies --threshold 0.75
-```
-
-## Example analytical workflow
-
-1. Load telemetry from CSV or JSON sources
-2. Normalize event keys and severity values
-3. Summarize activity by host, process, and user
-4. Compare activity against a baseline median
-5. Surface process and host anomalies with explainable scores
-6. Record assumptions, dataset details, and next steps
-
-## Example detections
-
-The current demo can surface:
-
-- hosts with abnormal event volume
-- processes with elevated severity patterns
-- suspicious user or host activity clusters
-- operational baselines for comparing event trends
-
-## Research standards
-
-Every experiment should include:
-
-- research question
-- dataset used
-- method or algorithm
-- thresholds and metrics
-- assumptions
-- validation result
-- next steps
-
-## License
-
-This project is licensed under the MIT License.
+  <g>
+    <text x="80" y="90" fill="#B7F6EA" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">SOC Research Lab</text>
+    <text x="80" y="350" fill="#DCEFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="500">Telemetry • Anomaly detection • Threat hunting</text>
+  </g>
+</svg>

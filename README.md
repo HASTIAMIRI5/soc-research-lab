@@ -1,5 +1,7 @@
 # SOC Research Lab
 
+<img src="assets/soc-research-lab-banner.svg" alt="SOC Research Lab banner" width="1200" />
+
 A research-grade SOC telemetry analysis and anomaly detection project for security operations teams, red-team emulation, and evidence-driven detection engineering.
 
 ## What this project does
@@ -22,6 +24,10 @@ Modern SOCs generate high-volume, noisy telemetry. Without structure, it is diff
 - methodology documentation
 - repeatable experiments
 
+## Visual overview
+
+<img src="assets/architecture-diagram.svg" alt="SOC Research Lab architecture diagram" width="1100" />
+
 ## Project layout
 
 - `data/` — sample telemetry and dataset notes
@@ -31,6 +37,7 @@ Modern SOCs generate high-volume, noisy telemetry. Without structure, it is diff
 - `scripts/` — runnable examples and operational demos
 - `src/soc_research_lab/` — reusable analysis code
 - `tests/` — validation and regression checks
+- `assets/` — project visuals and diagram assets
 
 ## Quick start
 
