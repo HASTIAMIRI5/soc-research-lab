@@ -1,0 +1,17 @@
+[project]
+name = "soc-research-lab"
+version = "0.1.0"
+description = "Research-grade SOC telemetry analysis and anomaly detection lab"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

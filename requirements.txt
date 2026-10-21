@@ -1,0 +1,10 @@
+# Python project dependencies
+# The core project intentionally uses the standard library so it runs
+# in minimal environments without extra installation overhead.
+
+# Optional packages for notebook work and advanced visualization can be added later.
+# pandas
+# numpy
+# matplotlib
+# seaborn
+# jupyter
