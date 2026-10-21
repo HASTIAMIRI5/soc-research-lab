@@ -2,17 +2,35 @@
 
 A research-grade SOC telemetry analysis and anomaly detection project for security operations teams, red-team emulation, and evidence-driven detection engineering.
 
-## Why this project matters
+## What this project does
 
-Modern security operations rely on rich telemetry, clear hypotheses, and reproducible analysis. This repository turns that into a practical lab: from synthetic telemetry generation to anomaly detection and documentation of methodology.
+This repository is designed to help researchers and analysts study security telemetry in a structured, reproducible way. It focuses on:
 
-## Project goals
+- endpoint and network telemetry analysis
+- anomaly detection for suspicious host behavior
+- behavior summarization by host, user, and process
+- clear research records for experiments and SOC workflows
+- explainable detection logic that can be extended over time
 
-- Build a reproducible framework for SOC telemetry analysis
-- Model adversary behavior and operational risk
-- Explore detection quality using transparent, explainable metrics
-- Provide a strong research structure for experiments and validation
-- Make it easy for researchers and engineers to iterate quickly
+## Why it matters
+
+Modern SOCs generate high-volume, noisy telemetry. Without structure, it is difficult to separate routine activity from meaningful signals. This project creates a lab environment that makes the following easier:
+
+- baseline comparison
+- suspicious activity ranking
+- dataset validation
+- methodology documentation
+- repeatable experiments
+
+## Project layout
+
+- `data/` — sample telemetry and dataset notes
+- `docs/` — architecture and methodology guidance
+- `research/` — experiment write-ups and findings
+- `notebooks/` — exploratory analysis and model iteration
+- `scripts/` — runnable examples and operational demos
+- `src/soc_research_lab/` — reusable analysis code
+- `tests/` — validation and regression checks
 
 ## Quick start
 
@@ -25,37 +43,41 @@ python scripts/run_demo.py
 python -m unittest discover -s tests -v
 ```
 
-## Repository layout
+## Command line usage
 
-- `data/` — sample telemetry and dataset documentation
-- `docs/` — architecture and research methodology
-- `notebooks/` — exploratory analysis notebooks
-- `scripts/` — runnable project utilities and demos
-- `src/soc_research_lab/` — reusable analysis code
-- `tests/` — validation and regression checks
+```bash
+python -m soc_research_lab.cli --csv data/synthetic_endpoint_telemetry.csv --summary
+python -m soc_research_lab.cli --csv data/synthetic_endpoint_telemetry.csv --anomalies --threshold 0.75
+```
 
 ## Example analytical workflow
 
-1. Load telemetry from a CSV or JSON dataset
-2. Normalize fields and standardize event metadata
-3. Aggregate activity by host, user, process, and event type
-4. Detect deviations using statistical thresholds and behavioral baselines
-5. Record findings with assumptions, metrics, and validation notes
+1. Load telemetry from CSV or JSON sources
+2. Normalize event keys and severity values
+3. Summarize activity by host, process, and user
+4. Compare activity against a baseline median
+5. Surface process and host anomalies with explainable scores
+6. Record assumptions, dataset details, and next steps
 
-## Example output
+## Example detections
 
-The included demo detects suspicious host behavior based on event volume and severity shifts.
+The current demo can surface:
 
-## Contribution model
+- hosts with abnormal event volume
+- processes with elevated severity patterns
+- suspicious user or host activity clusters
+- operational baselines for comparing event trends
+
+## Research standards
 
 Every experiment should include:
 
 - research question
 - dataset used
-- methodology
-- metrics and thresholds
+- method or algorithm
+- thresholds and metrics
 - assumptions
-- validation results
+- validation result
 - next steps
 
 ## License

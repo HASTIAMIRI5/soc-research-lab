@@ -1,31 +1,39 @@
-# Research methodology
+# Research architecture
 
-## Scientific approach
+## Objective
 
-The repository follows a defensive, evidence-driven workflow:
+The project is designed to support structured security telemetry research, from acquisition and normalization to anomaly detection and evidence-backed findings.
 
-- Define a measurable hypothesis
-- Assemble an appropriate dataset
-- Normalize and enrich raw outputs
-- Run reproducible analysis
-- Validate against known baselines and adversary patterns
-- Document uncertainty and limitations
+## Core components
 
-## Metrics to track
+1. Data layer
+   - raw CSV telemetry
+   - normalized event records
+   - reference datasets and baselines
 
-- event volume by host and user
-- severity trends over time
-- anomaly score distribution
-- detection precision and recall
-- analyst triage effort
+2. Analysis layer
+   - host summaries
+   - user summaries
+   - process summaries
+   - anomaly detection metrics
 
-## Good experiment design
+3. Research layer
+   - experiment notes
+   - assumptions and limitation tracking
+   - validation results and recommendations
 
-A strong research note should answer these questions:
+4. Delivery layer
+   - command-line demos
+   - Python package for reuse
+   - notebook-based exploratory analysis
 
-- What problem are we trying to solve?
-- What data did we use?
-- What did we measure?
-- What assumptions were made?
-- How did we validate the result?
-- What should happen next?
+## Data flow
+
+Telemetry is loaded from CSV files, normalized into dictionaries, and then transformed into structured summaries. Risky indicators are surfaced through event counts, severity baselines, and suspicious process profiles.
+
+## Recommended next evolutions
+
+- add a richer threat taxonomy
+- include behavioral baselines per asset class
+- correlate identity, endpoint, and network telemetry
+- surface detections in JSON and Markdown outputs

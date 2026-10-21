@@ -1,34 +1,26 @@
-import unittest
+# Baseline observation
 
-from soc_research_lab import detect_anomalies, load_events, summarize_by_host
+## Objective
 
+Assess the synthetic endpoint dataset for outlier activity and unusual event patterns.
 
-class TelemetryTests(unittest.TestCase):
-    def setUp(self):
-        self.events = [
-            {"host": "web-01", "severity": 3},
-            {"host": "web-01", "severity": 6},
-            {"host": "db-01", "severity": 2},
-            {"host": "db-01", "severity": 1},
-            {"host": "app-01", "severity": 1},
-            {"host": "app-01", "severity": 1},
-            {"host": "app-01", "severity": 1},
-        ]
+## Dataset
 
-    def test_summarize_by_host(self):
-        summary = summarize_by_host(self.events)
-        self.assertEqual(summary[0]["host"], "app-01")
-        self.assertEqual(summary[0]["event_count"], 3)
+- `data/synthetic_endpoint_telemetry.csv`
 
-    def test_detect_anomalies(self):
-        anomalies = detect_anomalies(self.events, threshold=0.5)
-        self.assertTrue(any(item["host"] == "web-01" for item in anomalies))
+## Method
 
-    def test_load_events(self):
-        data = load_events("data/synthetic_endpoint_telemetry.csv")
-        self.assertGreater(len(data), 10)
-        self.assertEqual(data[0]["host"], "web-01")
+- load telemetry events
+- aggregate by host, user, and process
+- compare each host against median event volume
+- flag processes with elevated severity values
 
+## Result
 
-if __name__ == "__main__":
-    unittest.main()
+The current dataset is small but includes multiple suspicious signals, especially around credential access and execution chains tied to PowerShell and network activity. Those patterns are useful for building a baseline for more advanced detection work.
+
+## Next steps
+
+- add more realistic attacker simulation scenarios
+- correlate process execution with execution time and host behavior
+- expand into identity and network telemetry
